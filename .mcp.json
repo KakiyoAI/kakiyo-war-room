@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kakiyo": {
+      "type": "http",
+      "url": "https://api.kakiyo.com/mcp"
+    }
+  }
+}

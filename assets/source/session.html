@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  #canvas { width: 1500px; padding: 48px 64px 56px; }
+  .win { border-radius: 16px; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--card-2); }
+  .bar i { width: 12px; height: 12px; border-radius: 99px; background: var(--border); display: block; }
+  .bar span { margin-left: 12px; font: 500 13px "Inter"; color: var(--faint); }
+  .body { padding: 26px 30px 30px; font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 16px; line-height: 1.7; color: var(--ink); }
+  .u { color: var(--ink); } .u .p { color: var(--blue); font-weight: 700; }
+  .dim { color: var(--faint); }
+  .tool { color: var(--muted); }
+  .tool b { color: var(--blue-ink); font-weight: 600; }
+  .ok { color: #16a34a; }
+  [data-theme="dark"] .ok { color: #4ade80; }
+  .say { margin: 18px 0 14px; font-family: "Inter", sans-serif; font-size: 18px; line-height: 1.55; color: var(--ink); }
+  table { border-collapse: collapse; margin: 6px 0 4px; font-family: "Inter", sans-serif; font-size: 15px; width: 100%; }
+  th { text-align: left; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 700; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--ink); vertical-align: top; }
+  td.m { color: var(--muted); }
+  .tag { display: inline-block; font: 600 12px "Inter"; padding: 2px 9px; border-radius: 99px; }
+  .strong { background: rgba(22,163,74,.12); color: #15803d; }
+  .poss { background: rgba(217,119,6,.13); color: #b45309; }
+  [data-theme="dark"] .strong { background: rgba(74,222,128,.14); color: #4ade80; }
+  [data-theme="dark"] .poss { background: rgba(251,191,36,.14); color: #fbbf24; }
+  .keep { font-weight: 700; color: #15803d; } .maybe { font-weight: 700; color: #b45309; }
+  [data-theme="dark"] .keep { color: #4ade80; } [data-theme="dark"] .maybe { color: #fbbf24; }
+  .ask { margin-top: 16px; padding: 14px 18px; border-radius: 12px; background: var(--blue-soft); border: 1px solid var(--blue-line); font-family: "Inter", sans-serif; font-size: 17px; line-height: 1.5; color: var(--ink); }
+  .cap { margin-top: 14px; text-align: center; color: var(--faint); font-size: 14px; }
+</style></head>
+<body>
+<div id="canvas">
+  <div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>Claude Code · my-workspace</span></div>
+    <div class="body">
+      <div class="u"><span class="p">&gt;</span> /war-room:find-leads VPs of Sales at B2B SaaS companies in the Nordics, 50-500 employees. For the “Nordics Q4” campaign.</div>
+      <div class="tool" style="margin-top:14px"><span class="ok">✓</span> <b>verify_api_key</b> · <b>list_agents</b> · <b>list_campaigns</b> · <b>get_credits</b></div>
+      <div class="tool"><span class="ok">✓</span> <b>find_leads</b> <span class="dim">(campaign: Nordics Q4)</span> · <b>get_lead_search</b> <span class="dim">(outside search done)</span></div>
+
+      <div class="say">Found 25 candidates. I dropped 8 that don't fit (wrong size, wrong country, or no recent signal). Here are the 17 left:</div>
+
+      <table>
+        <tr><th>Name</th><th>Title</th><th>Company</th><th>Strength</th><th>Signal</th><th>Verdict</th></tr>
+        <tr><td>Anna Example</td><td class="m">VP Sales</td><td>Northwave</td><td><span class="tag strong">strong</span></td><td class="m">Hiring 3 AEs (Oct 2026)</td><td class="keep">keep</td></tr>
+        <tr><td>Jonas Sample</td><td class="m">VP Sales EMEA</td><td>Fjordly</td><td><span class="tag strong">strong</span></td><td class="m">Series B announced (Sep 2026)</td><td class="keep">keep</td></tr>
+        <tr><td>Mika Demo</td><td class="m">Head of Sales</td><td>Lumo Systems</td><td><span class="tag poss">possible</span></td><td class="m">No dated signal</td><td class="maybe">maybe</td></tr>
+      </table>
+      <div class="dim" style="font-family:Inter;font-size:14px;margin:4px 0 0 12px">… 14 more rows · Keep 13 · Maybe 4 · Searches left today: 19</div>
+
+      <div class="ask"><b>Nothing has been added to any campaign.</b> Want me to research the 13 keepers, or stage them in a paused campaign?</div>
+    </div>
+  </div>
+  <div class="cap">Illustrative session. Names and companies are made up.</div>
+</div>
+<script>document.documentElement.dataset.theme = new URLSearchParams(location.search).get('theme') || 'light';</script>
+</body></html>

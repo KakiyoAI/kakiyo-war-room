@@ -1,0 +1,25 @@
+{
+  "name": "kakiyo-war-room",
+  "owner": {
+    "name": "Kakiyo",
+    "url": "https://kakiyo.com"
+  },
+  "metadata": {
+    "description": "Kakiyo War Room: the command center for your Kakiyo AI SDR, as one agent plugin powered by the Kakiyo MCP."
+  },
+  "plugins": [
+    {
+      "name": "war-room",
+      "source": "./",
+      "description": "Seven specialists plan, find, research, tune, check, watch and report on your LinkedIn outreach through the Kakiyo MCP. Nothing goes live without your approval.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Kakiyo"
+      },
+      "homepage": "https://docs.kakiyo.com/mcp-server",
+      "license": "MIT",
+      "keywords": ["kakiyo", "sales", "outbound", "linkedin", "ai-sdr", "mcp", "gtm"],
+      "category": "productivity"
+    }
+  ]
+}

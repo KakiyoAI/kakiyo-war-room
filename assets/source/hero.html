@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css">
+<style>
+  #canvas { width: var(--w, 1600px); height: var(--h, 560px); }
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: right center; }
+  [data-theme="light"] .bg { background-image: url("bg-light.jpg"); }
+  [data-theme="dark"] .bg { background-image: url("bg-dark.jpg"); }
+  .fade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, var(--bg) 34%, transparent 66%); opacity: .94; }
+  .content { position: absolute; left: 104px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; max-width: 880px; }
+  .brandrow { display: flex; align-items: center; gap: 22px; }
+  .brandrow .logo.full { --lw: 176px; }
+  .sep { width: 1px; height: 30px; background: var(--border); }
+  .kicker { margin: 0; }
+  h1 { font-family: "Cal Sans", "Inter", sans-serif; font-weight: 400; font-size: 132px; line-height: .98; letter-spacing: -0.03em; margin: 34px 0 0 -4px; color: var(--ink); }
+  h1 span { color: var(--blue); }
+  p.lede { margin-top: 30px; font-size: 29px; line-height: 1.38; color: var(--muted); max-width: 720px; letter-spacing: -0.005em; }
+  p.lede b { color: var(--ink); font-weight: 600; }
+  .chips { display: flex; gap: 10px; margin-top: 36px; }
+  .compact h1 { font-size: 112px; }
+  .compact p.lede { font-size: 26px; }
+</style></head>
+<body>
+<div id="canvas">
+  <div class="bg"></div><div class="fade"></div>
+  <div class="content">
+    <div class="brandrow">
+      <span class="logo full"><img class="light" src="logotype-full.jpg"><img class="dark" src="logotype-dark.png"></span>
+      <span class="sep"></span>
+      <span class="kicker">Agent plugin</span>
+    </div>
+    <h1>War <span>Room</span></h1>
+    <p class="lede">The command center for your <b>Kakiyo AI SDR</b>. Plan who to reach, find them, tune what your AI says, launch with your approval, and see what works.</p>
+    <div class="chips">
+      <span class="chip">Claude Code</span><span class="chip">Grok</span><span class="chip">Cursor</span><span class="chip">Codex</span><span class="chip">Any MCP client</span>
+    </div>
+  </div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.documentElement.dataset.theme = q.get('theme') || 'light';
+  if (q.get('w')) { document.documentElement.style.setProperty('--w', q.get('w') + 'px'); document.documentElement.style.setProperty('--h', q.get('h') + 'px'); }
+  if (q.get('compact')) document.getElementById('canvas').classList.add('compact');
+</script>
+</body></html>

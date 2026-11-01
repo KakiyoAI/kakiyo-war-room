@@ -1,0 +1,30 @@
+{
+  "name": "war-room",
+  "displayName": "Kakiyo War Room",
+  "description": "Command center for your Kakiyo AI SDR. Seven specialists plan targeting, find leads, research accounts, tune your AI prompt, check launches, watch the inbox and report what converts through the Kakiyo MCP. Nothing goes live without your approval.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Kakiyo",
+    "url": "https://kakiyo.com"
+  },
+  "homepage": "https://docs.kakiyo.com/mcp-server",
+  "repository": "https://github.com/KakiyoAI/kakiyo-war-room",
+  "license": "MIT",
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://docs.kakiyo.com/mcp-server",
+  "supportUrl": "https://kakiyo.com",
+  "privacyPolicyUrl": "https://kakiyo.com/privacy-policy",
+  "termsOfServiceUrl": "https://kakiyo.com/terms",
+  "keywords": [
+    "kakiyo",
+    "sales",
+    "outbound",
+    "linkedin",
+    "ai-sdr",
+    "lead-generation",
+    "prospecting",
+    "mcp",
+    "gtm",
+    "pipeline"
+  ]
+}

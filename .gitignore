@@ -1,0 +1,5 @@
+.DS_Store
+war-room-context.md
+war-room-*.md
+!war-room-context.template.md
+.env*

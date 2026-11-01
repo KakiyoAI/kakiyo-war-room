@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "plugins": {
+    "war-room": {
+      "components": {
+        "skills": [
+          {
+            "name": "war-room",
+            "description": "Command center for the Kakiyo AI SDR, routed across seven specialists and powered by the Kakiyo MCP."
+          }
+        ],
+        "agents": [
+          { "name": "strategist", "description": "Decides who to target, why, and with which offering" },
+          { "name": "scout", "description": "Finds and filters leads with Kakiyo Lead Finder" },
+          { "name": "intel", "description": "Researches accounts and writes customData for the AI" },
+          { "name": "playbook-writer", "description": "Tunes the AI prompt: context, first message, follow-ups" },
+          { "name": "launch-operator", "description": "Launch pre-flight, profile health and staging plan" },
+          { "name": "inbox-watch", "description": "Reads conversations, flags hot leads, hands off to humans" },
+          { "name": "analyst", "description": "Reports what converts and where the funnel leaks" }
+        ],
+        "commands": [
+          { "name": "brief", "description": "Read-only status of the workspace" },
+          { "name": "find-leads", "description": "Find and filter leads, no outreach" },
+          { "name": "research", "description": "Research leads and draft customData" },
+          { "name": "tune-prompt", "description": "Review and improve an AI prompt" },
+          { "name": "launch", "description": "Stage a campaign and launch after approval" },
+          { "name": "inbox", "description": "Triage replies and flag hot leads" },
+          { "name": "report", "description": "Funnel and performance report" }
+        ],
+        "mcpServers": [
+          { "name": "kakiyo", "description": "Hosted Kakiyo MCP at https://api.kakiyo.com/mcp (OAuth)" }
+        ]
+      }
+    }
+  }
+}
